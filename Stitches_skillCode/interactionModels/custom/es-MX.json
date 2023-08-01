@@ -1,0 +1,591 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "medidas clientes",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "RegistraCliente",
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "samples": [
+                "es {nombre}",
+                "su nombre es {nombre}",
+                "se llama {nombre}",
+                "{nombre}"
+              ]
+            },
+            {
+              "name": "cintura",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "es {cintura}",
+                "mide {cintura}",
+                "la cintura mide {cintura}"
+              ]
+            },
+            {
+              "name": "pecho",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "es {pecho}",
+                "mide {pecho}",
+                "su pecho mide {pecho}"
+              ]
+            },
+            {
+              "name": "cadera",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "mide {cintura}",
+                "su cintura mide {cintura}"
+              ]
+            },
+            {
+              "name": "tiro",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "es {tiro}",
+                "{tiro}"
+              ]
+            },
+            {
+              "name": "talle",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "la medida es {talle}",
+                "{talle}",
+                "es {talle}"
+              ]
+            },
+            {
+              "name": "espalda",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{espalda}",
+                "es {espalda}"
+              ]
+            }
+          ],
+          "samples": [
+            "agrega a {nombre} ",
+            "registra a {nombre}",
+            "registra a un cliente nuevo",
+            "Registra a {nombre} con las medidas de cintura {cintura} pecho {pecho}  cadera {cadera}  tiro {tiro} talle {talle} espalda {espalda}"
+          ]
+        },
+        {
+          "name": "ConsultaMedidas",
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "samples": [
+                "se llama {nombre}",
+                "su nombre es {nombre}",
+                "es {nombre}",
+                "{nombre}"
+              ]
+            }
+          ],
+          "samples": [
+            "Dame las medidas de {nombre}  por favor",
+            "Necesito las medidas de {nombre}",
+            "Dame las medidas de {nombre}",
+            "Medidas de {nombre}"
+          ]
+        },
+        {
+          "name": "ModificaMedida",
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "samples": [
+                "es {nombre}",
+                "de {nombre}",
+                "a {nombre}",
+                "{nombre}"
+              ]
+            },
+            {
+              "name": "parte_corporal",
+              "type": "parte_del_cuerpo",
+              "samples": [
+                "es {parte_corporal}",
+                "{parte_corporal}",
+                "la de {parte_corporal}"
+              ]
+            },
+            {
+              "name": "valor_nuevo",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "es {valor_nuevo}",
+                "la medida es {valor_nuevo}",
+                "{valor_nuevo}",
+                "el nuevo valor es {valor_nuevo}"
+              ]
+            }
+          ],
+          "samples": [
+            "modifica medida",
+            "modifica medida de {nombre}",
+            "cambia la medida perteneciente a {nombre} de {parte_corporal} a {valor_nuevo}"
+          ]
+        },
+        {
+          "name": "EliminaCliente",
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "samples": [
+                "es {nombre}",
+                "{nombre}",
+                "a {nombre}"
+              ]
+            }
+          ],
+          "samples": [
+            "elimina a {nombre}"
+          ]
+        },
+        {
+          "name": "ConsultaUnaMedida",
+          "slots": [
+            {
+              "name": "parte_del_cuerpo",
+              "type": "parte_del_cuerpo",
+              "samples": [
+                "es {parte_del_cuerpo}",
+                "{parte_del_cuerpo}",
+                "la de {parte_del_cuerpo}"
+              ]
+            },
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "samples": [
+                "es {nombre}",
+                "a {nombre}",
+                "{nombre}",
+                "de {nombre}"
+              ]
+            }
+          ],
+          "samples": [
+            "medida de {parte_del_cuerpo} de {nombre}",
+            "dame la medida de {parte_del_cuerpo} de {nombre}"
+          ]
+        },
+        {
+          "name": "ParaConsultarMedidas",
+          "slots": [
+            {
+              "name": "accion",
+              "type": "acciones"
+            }
+          ],
+          "samples": [
+            "como {accion} una medida de un cliente",
+            "como {accion} un cliente",
+            "como {accion} una medida"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "espalda"
+              }
+            },
+            {
+              "name": {
+                "value": "talle"
+              }
+            },
+            {
+              "name": {
+                "value": "tiro"
+              }
+            },
+            {
+              "name": {
+                "value": "cadera"
+              }
+            },
+            {
+              "name": {
+                "value": "pecho"
+              }
+            },
+            {
+              "name": {
+                "value": "cintura"
+              }
+            }
+          ],
+          "name": "parte_del_cuerpo"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "modificar"
+              }
+            },
+            {
+              "name": {
+                "value": "cambiar"
+              }
+            },
+            {
+              "name": {
+                "value": "actualizar"
+              }
+            },
+            {
+              "name": {
+                "value": "eliminar"
+              }
+            },
+            {
+              "name": {
+                "value": "consultar"
+              }
+            },
+            {
+              "name": {
+                "value": "registrar"
+              }
+            }
+          ],
+          "name": "acciones"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RegistraCliente",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.64413920321.1329258449246"
+              }
+            },
+            {
+              "name": "cintura",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1397018618045.1660349057212"
+              }
+            },
+            {
+              "name": "pecho",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1369323095302.1610343591943"
+              }
+            },
+            {
+              "name": "cadera",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1369323095302.1102331073590"
+              }
+            },
+            {
+              "name": "tiro",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.843066472928.260141926034"
+              }
+            },
+            {
+              "name": "talle",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.778260773441.155090921525"
+              }
+            },
+            {
+              "name": "espalda",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.778260773441.43774061710"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EliminaCliente",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.655246863314.819881251680"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ModificaMedida",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.453070094188.1276215177704"
+              }
+            },
+            {
+              "name": "parte_corporal",
+              "type": "parte_del_cuerpo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.453070094188.634881966115"
+              }
+            },
+            {
+              "name": "valor_nuevo",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.453070094188.1050749712641"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ConsultaMedidas",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.768686057004.896491216625"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ConsultaUnaMedida",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "parte_del_cuerpo",
+              "type": "parte_del_cuerpo",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.730351013176.1467307188411"
+              }
+            },
+            {
+              "name": "nombre",
+              "type": "AMAZON.Person",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.730351013176.1536463520147"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1397018618045.1660349057212",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuánto mide la cintura de {nombre} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1369323095302.1610343591943",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuánto mide el pecho de {nombre} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1369323095302.1102331073590",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuánto mide la cadera de {nombre} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.64413920321.1329258449246",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Dime el nombre del cliente que quieres registrar."
+          },
+          {
+            "type": "PlainText",
+            "value": "Perfecto, cuál es el nombre de tu cliente?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.453070094188.1050749712641",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿cuál es el nuevo valor de la medida?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.453070094188.634881966115",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿cuál medida quieres modificar?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.453070094188.1276215177704",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿a quién pertenece la medida que quieres modificar?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.768686057004.896491216625",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cómo se llama el cliente?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.655246863314.819881251680",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿A quién quieres eliminar?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.730351013176.1467307188411",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿qué medida quieres consultar?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.730351013176.1536463520147",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿de quién es la medida que quieres consultar?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.843066472928.260141926034",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuál es la medida del tiro?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.778260773441.155090921525",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuál es la medida del talle de {nombre} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.778260773441.43774061710",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuál es la medida de la espalda de {nombre} ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "22"
+}
